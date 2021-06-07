@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### npm install:
+--axios
+--highcharts
+--highcharts-react-official 
+--@highcharts/map-collection
+--moment
+--lodash
+--material-ui/core
+--@fontsource/roboto
+
+
+folder:
+
+commponents:
+--apis
+--CountrySelector
+--Highlight
+--Summary
+
+tao input selector goi api truyen value cho option trong input
+
+
+
