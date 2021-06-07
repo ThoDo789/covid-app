@@ -11,36 +11,43 @@ const [countries, setCountries] = useState([])
 const [selectedCountryId,setSelectCountryId] = useState('')
 const [report,setReport] = useState([])
 useEffect(()=>{
-      getCountries()
+      getCountries()// get list country  to api
       .then((res)=>{
-        setCountries(res.data)
+        setCountries(res.data) // save into state countries
         console.log(countries)
-        setSelectCountryId('vn')
+        setSelectCountryId('vn') // set value default when user have not selected input
 })
 
 },[])
 const handleOnChange=(e)=>{
-  setSelectCountryId(e.target.value)
+  setSelectCountryId(e.target.value) //get value input
  
 }
 
 useEffect(() => {
-  if(selectedCountryId){
-    const { Slug } = countries.find(country => country.ISO2.toLowerCase() === selectedCountryId);
+  if(selectedCountryId){ 
+    const { Slug } = countries.find(country => country.ISO2.toLowerCase() === selectedCountryId); //get slug by query
   
-    getReportByCountry(Slug).then((res) => {
+    getReportByCountry(Slug).then((res) => { //pass slug to api url  ex: Viet nam : 'vn' 
       // remove item final
       res.data.pop()
-      setReport(res.data)});
+      console.log(res.data)
+      setReport(res.data)});// save data into state
+      
   }
  
 }, [selectedCountryId, countries]);
 
 
   return <>
-      <CountrySelector countries={countries} onHandleChange={handleOnChange} value={selectedCountryId}/>
+      <CountrySelector countries={countries} 
+      onHandleChange={handleOnChange} 
+      value={selectedCountryId}
+      />
       <Highlight report={report}/>
-      <Summary countryId={selectedCountryId} report={report} />
+      <Summary countryId={selectedCountryId}
+       report={report} 
+       />
 
   </>
 }

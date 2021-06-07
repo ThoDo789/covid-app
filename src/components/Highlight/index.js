@@ -21,7 +21,7 @@ export default function Highlight({ report }) {
       count: data.Deaths,
       type: "deaths",
     },
-  ];
+  ]; //list value
   return (
     <Grid container spacing={3}>
       {summary.map((item, key) => (
